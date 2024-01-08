@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ATUWordle.MainPage"
+             xmlns:viewmodel="clr-namespace:ATUWordle"
+             xmlns:model="clr-namespace:ATUWordle"
+             x:DataType="viewmodel:MainPage">
+    <ScrollView>
+        <Grid RowDefinitions="*, Auto"
+              Padding="6,10,6,10"
+              IsVisible="{Binding EverythingLoaded}"
+              x:Name="GridGameTable">
+            <Label x:Name="TopTextLbl" Text="{Binding TopText}" FontSize="15" WidthRequest="360" HorizontalOptions="Center"/>
+            <ActivityIndicator IsVisible="{Binding LoadingPage}"
+                               IsRunning="{Binding LoadingPage}"
+                               HorizontalOptions="Fill"
+                               VerticalOptions="Center"
+                               Color="{StaticResource Primary}"/>
+
+            <VerticalStackLayout
+                Spacing="6"
+                BindableLayout.ItemsSource="{Binding Rows}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="model:WordRow">
+                        <HorizontalStackLayout 
+                            Spacing="6"
+                            HorizontalOptions="Center"
+                            BindableLayout.ItemsSource="{Binding Letters}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="model:Letter">
+                                    <Frame BackgroundColor="{StaticResource White}">
+                                        <Label Text="{Binding Input}"
+                                               FontSize="24"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               TextColor="{StaticResource Black}"/>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Spacing="4">
+                <HorizontalStackLayout 
+                    Spacing="1"
+                    HorizontalOptions="Center"
+                    BindableLayout.ItemsSource="{Binding KeyboardRow1}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Null}">
+                            <Button Text="{Binding .}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPage}}, Path=EnterLetterCommand}"
+                                    CommandParameter="{Binding .}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout 
+                    Spacing="1"
+                    HorizontalOptions="Center"
+                    BindableLayout.ItemsSource="{Binding KeyboardRow2}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Null}">
+                            <Button Text="{Binding .}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPage}}, Path=EnterLetterCommand}"
+                                    CommandParameter="{Binding .}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout 
+                    Spacing="1"
+                    HorizontalOptions="Center"
+                    BindableLayout.ItemsSource="{Binding KeyboardRow3}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Null}">
+                            <Button Text="{Binding .}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPage}}, Path=EnterLetterCommand}"
+                                    CommandParameter="{Binding .}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </HorizontalStackLayout>
+                <Button Text="New Game" WidthRequest="100" HorizontalOptions="Center" Clicked="NewGameButton_Clicked"/>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

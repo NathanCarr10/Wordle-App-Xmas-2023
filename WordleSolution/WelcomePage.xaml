@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ATUWordle.WelcomePage"
+             Title="">
+    <ContentPage.Resources>
+        <x:Double x:Key="gridFont">15</x:Double>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout HorizontalOptions="Center" Padding="10">
+            <Image Source="atulogo.png" HorizontalOptions="Center" 
+                   VerticalOptions="Center" HeightRequest="250" WidthRequest="400"/>
+            <Label 
+                Text="Can you guess the word? " VerticalOptions="End" 
+                HorizontalOptions="Center" FontSize="28"/>
+            <Label 
+                Text=" 5-letter word." VerticalOptions="End" 
+                HorizontalOptions="Center" FontSize="28" Padding="20"/>
+            <Button x:Name="PlayBtn" BorderColor="White" Margin="5" CornerRadius="25" WidthRequest="120" Text="Play" Clicked="PlayBtn_Clicked"/>
+            <Button x:Name="btnHelp" BorderColor="{StaticResource Blue100Accent}" Margin="5" CornerRadius="25" WidthRequest="120" Text="How To Play?" 
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Green}, Dark={StaticResource Primary}}" 
+                    TextColor="{StaticResource White}" Clicked="btnHelp_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

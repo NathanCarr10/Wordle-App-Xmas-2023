@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordleSolution", "WordleSolution\WordleSolution.csproj", "{D60A76B4-753C-42CD-AA60-183C093AFC82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D60A76B4-753C-42CD-AA60-183C093AFC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60A76B4-753C-42CD-AA60-183C093AFC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60A76B4-753C-42CD-AA60-183C093AFC82}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D60A76B4-753C-42CD-AA60-183C093AFC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60A76B4-753C-42CD-AA60-183C093AFC82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60A76B4-753C-42CD-AA60-183C093AFC82}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BE56A8B-CA65-4AC5-90DA-0CDEF91F4EC3}
+	EndGlobalSection
+EndGlobal
